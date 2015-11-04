@@ -1,4 +1,4 @@
-# Checkr oAuth integration guide
+# Checkr oAuth Integration Guide
 
 With Checkr oAuth, your customers can easily connect their Checkr account with your application.
 
