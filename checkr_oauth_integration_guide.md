@@ -2,10 +2,10 @@
 
 With Checkr oAuth, your customers can easily connect their Checkr account with your application.
 
-OAuth 2 is a protocol that lets your app request authorization to private details in a user's Checkr account without getting their API key or password.
+OAuth 2 is a protocol that lets your app request authorization to read and write Checkr user’s data without knowing their API key or password.
 Before getting started, please email clients@checkr.com to register your application.
 
-Every Checkr partner is assigned a unique `client_id` and `client_secret` which will be used in the OAuth flow.
+Every Checkr partner will have its own OAuth application associated with a unique `client_id` and `client_secret` which will be used in the OAuth flow. The `client_secret` must not be shared.
 The `client_secret` should not be shared.
 
 ## 1. Flow
