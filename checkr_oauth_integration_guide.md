@@ -71,12 +71,12 @@ You’re done!  The user has now authorized your platform.  You’ll want to sto
 ### 2.3. Additional per-account configuration steps
 #### 2.3.1 Webhooks
 You may want to start listening Webhooks events (eg: `report.completed`) for your authorized accounts.
-To do so, you will need to manage Webhooks for every account: see [Webhooks API documentation](https://gist.github.com/jperichon/5c2ac76e779fd596ed70)
+To do so, you will need to manage Webhooks for every account: see [Webhooks API documentation](https://gist.github.com/jperichon/5c2ac76e779fd596ed70).
 
 #### 2.3.2 Packages
 You may want to have a dynamic way of creating and listing report's packages on a per-account basis.
 
-To do so, you will need to manage Packages of every authorized account: see [Packages API documentation](https://gist.github.com/jperichon/4a01e9266cada5af677e)
+To do so, you will need to manage Packages of every authorized account: see [Packages API documentation](https://gist.github.com/jperichon/4a01e9266cada5af677e).
 
 ### 2.4 User deauthorization
 
