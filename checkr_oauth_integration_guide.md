@@ -2,7 +2,7 @@
 
 With Checkr oAuth, your customers can easily connect their Checkr account with your application.
 
-OAuth 2 is a protocol that lets your app request authorization to read and write Checkr user’s data without knowing their API key or password.
+OAuth 2 is a protocol that lets you have access to Checkr account's data that have authorized your application, without knowing their API key or password.
 Before getting started, please email clients@checkr.com to register your application.
 
 Every Checkr partner will have its own OAuth application associated with a unique `client_id` and `client_secret` which will be used in the OAuth flow. The `client_secret` must not be shared.
@@ -12,9 +12,12 @@ The `client_secret` should not be shared.
 When a user wants to connect their Checkr account to your platform, they’ll go through these steps:
 
 1. On your website, the user will click a link that takes them to Checkr, passing along your application `client_id`.
-2. On Checkr’s website, the user will be prompted to connect their Checkr account, or create a new account if they don’t already have one.
+2. Once on Checkr’s website, the user will be prompted to authorize your application by either:
+    - Creating a new account with a credit card
+    - Login into their existing account
+    - If they are already connected, simply authorizing the application
 3. The user will then be redirected back to your site (specifically to your `redirect_uri`), passing along an authorization `code`.
-4. Using this `code`, your website will be able to create a token for this account and store it on your data store.
+4. Using this `code`, your website will be able to create an `access_token` for this account and store it on your data store.
 5. Subsquent API requests can be made on behalf of the authorized account using the token.
 
 ## 2. Integrating
@@ -63,7 +66,7 @@ Checkr will return a response containing the authentication credentials for the 
 }
 ```
 
-You’re done! The user is now connected to your platform. You’ll want to store all of the returned information in your database for later use.
+You’re done!  The user has now authorized your platform.  You’ll want to store all of the returned information in your database for later use.
 
 ### 2.3. Additional per-account configuration steps
 #### 2.3.1 Webhooks
