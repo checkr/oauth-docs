@@ -98,15 +98,15 @@ curl https://checkr.com/oauth/deauthorize \
    -u YOUR_SECRET_KEY:
 ```
 
-## 3. Sample application
+## 3. Sample application in Ruby
 
 ```ruby
 require 'sinatra'
 require 'oauth2'
 
 configure do
-  set :client_id, 'TO_SET'
-  set :api_key, 'TO_SET'
+  set :client_id, 'YOUR_CLIENT_iD'
+  set :api_key, 'YOUR_API_KEY'
 
   set :options, {
     site: 'https://checkr.com',
@@ -130,7 +130,8 @@ get '/oauth_callback' do
 
   response = settings.client.auth_code.get_token(code, params: { scope: 'read_write' })
   access_token = response.token
-
+  
+  # you can now store this token and use it as a regular Checkr API key
 end
 ```
 
