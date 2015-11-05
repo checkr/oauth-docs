@@ -106,7 +106,7 @@ require 'oauth2'
 
 configure do
   set :client_id, 'YOUR_CLIENT_iD'
-  set :api_key, 'YOUR_API_KEY'
+  set :client_secret, 'YOUR_CLIENT_SECRET'
 
   set :options, {
     site: 'https://checkr.com',
@@ -114,7 +114,7 @@ configure do
     token_url: '/oauth/tokens'
   }
 
-  set :client, OAuth2::Client.new(settings.client_id, settings.api_key, settings.options)
+  set :client, OAuth2::Client.new(settings.client_id, settings.client_secret, settings.options)
 end
 
 get '/' do
