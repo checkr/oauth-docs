@@ -39,6 +39,7 @@ https://checkr.com/oauth/authorize/:client_id?scope=read_write
 To prevent CSRF attacks, you can use the `state` parameter, passing along a unique token as the value. We’ll include the `state` you gave us when we redirect back.
 
 Here is how this may look (the href value matches that above):
+
 ![Connect with Checkr](https://checkr.com/assets/images/connect_with_checkr.png)
 
 
