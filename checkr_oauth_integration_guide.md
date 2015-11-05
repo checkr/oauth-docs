@@ -99,6 +99,38 @@ curl https://checkr.com/oauth/deauthorize \
 
 ## 3. Sample application
 
-Coming soon!
+```ruby
+require 'sinatra'
+require 'oauth2'
+
+configure do
+  set :client_id, 'TO_SET'
+  set :api_key, 'TO_SET'
+
+  set :options, {
+    site: 'https://checkr.com',
+    authorize_url: "/oauth/authorize/#{settings.client_id}",
+    token_url: '/oauth/tokens'
+  }
+
+  set :client, OAuth2::Client.new(settings.client_id, settings.api_key, settings.options)
+end
+
+get '/' do
+  <<-END
+    <a href="#{settings.options[:site]}#{settings.options[:authorize_url]}">
+      <img src="https://checkr.com/assets/images/connect_with_checkr.png" width="250" />
+    </a>
+  END
+end
+
+get '/oauth_callback' do
+  code = params[:code]
+
+  response = settings.client.auth_code.get_token(code, params: { scope: 'read_write' })
+  access_token = response.token
+
+end
+```
 
 ## [4. Checkr oAuth Full Reference](https://gist.github.com/jperichon/348ff7e99158d075cbc7)
