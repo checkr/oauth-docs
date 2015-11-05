@@ -105,7 +105,7 @@ require 'sinatra'
 require 'oauth2'
 
 configure do
-  set :client_id, 'YOUR_CLIENT_iD'
+  set :client_id, 'YOUR_CLIENT_ID'
   set :client_secret, 'YOUR_CLIENT_SECRET'
 
   set :options, {
