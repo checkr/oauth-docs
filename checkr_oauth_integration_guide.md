@@ -5,8 +5,7 @@ With Checkr oAuth, your customers can easily connect their Checkr account with y
 OAuth 2 is a protocol that lets you have access to Checkr account's data that have authorized your application, without knowing their API key or password.
 Before getting started, please email clients@checkr.com to register your application.
 
-Every Checkr partner will have its own OAuth application associated with a unique `client_id` and `client_secret` which will be used in the OAuth flow. The `client_secret` must not be shared.
-The `client_secret` should not be shared.
+Every Checkr partner will have its own OAuth application associated with a unique `client_id` and `client_secret` which will be used in the OAuth flow. The `client_secret` should not be shared.
 
 ## 1. Flow
 When a user wants to connect their Checkr account to your platform, they’ll go through these steps:
