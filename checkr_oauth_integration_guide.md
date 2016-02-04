@@ -32,14 +32,14 @@ Checkr can also provide a development `client_id`, to make testing easier.
 With these two pieces of information in hand, you’re ready to have your users connect with your platform. We recommend showing a Connect button that sends them to our authorize_url endpoint:
 
 ```
-https://checkr.com/oauth/authorize/:client_id?scope=read_write
+https://api.checkr.com/oauth/authorize/:client_id?scope=read_write
 ```
 
 To prevent CSRF attacks, you can use the `state` parameter, passing along a unique token as the value. We’ll include the `state` you gave us when we redirect back.
 
 Here is how this may look (the href value matches that above):
 
-![Connect with Checkr](https://checkr.com/assets/images/connect_with_checkr.png)
+![Connect with Checkr](https://api.checkr.com/assets/images/connect_with_checkr.png)
 
 
 ### 2.2 Token issuance
@@ -90,10 +90,10 @@ A `token.deauthorized` webhook event is sent when a user disconnects your platfo
 
 #### 2.4.2 From your system
 
-Additionally, if you want to disconnect access to an account, you can POST to `https://checkr.com/oauth/deauthorize`:
+Additionally, if you want to disconnect access to an account, you can POST to `https://api.checkr.com/oauth/deauthorize`:
 
 ```curl
-curl https://checkr.com/oauth/deauthorize \
+curl https://api.checkr.com/oauth/deauthorize \
    -u YOUR_SECRET_KEY:
 ```
 
@@ -108,7 +108,7 @@ configure do
   set :client_secret, 'YOUR_CLIENT_SECRET'
 
   set :options, {
-    site: 'https://checkr.com',
+    site: 'https://api.checkr.com',
     authorize_url: "/oauth/authorize/#{settings.client_id}",
     token_url: '/oauth/tokens'
   }
@@ -119,7 +119,7 @@ end
 get '/' do
   <<-END
     <a href="#{settings.options[:site]}#{settings.options[:authorize_url]}">
-      <img src="https://checkr.com/assets/images/connect_with_checkr.png" width="250" />
+      <img src="https://api.checkr.com/assets/images/connect_with_checkr.png" width="250" />
     </a>
   END
 end
@@ -129,7 +129,7 @@ get '/oauth_callback' do
 
   response = settings.client.auth_code.get_token(code, params: { scope: 'read_write' })
   access_token = response.token
-  
+
   # you can now store this token and use it as a regular Checkr API key
 end
 ```

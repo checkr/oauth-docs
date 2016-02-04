@@ -2,7 +2,7 @@
 
 ## 1. Authorization
 
-#### GET https://checkr.com/oauth/authorize/:client_id
+#### GET https://api.checkr.com/oauth/authorize/:client_id
 
 | Name| Required?  | Description |
 | ------------- |:-------------:| -----:| -----:|
@@ -20,7 +20,7 @@
 
 ## 2. Token Issuance
 
-#### POST https://checkr.com/oauth/tokens
+#### POST https://api.checkr.com/oauth/tokens
 
 | Name| Required?  | Description |
 | ------------- |:-------------:| -----:| -----:|
@@ -30,7 +30,7 @@
 
 Request:
 ``` curl
-curl -X POST https://checkr.com/oauth/tokens \
+curl -X POST https://api.checkr.com/oauth/tokens \
     -d client_id=XXX \
     -d client_secret=XXX \
     -d code=XXX
@@ -47,10 +47,10 @@ Response:
 
 ## 3. Deauthorize
 
-#### POST https://checkr.com/oauth/deauthorize
+#### POST https://api.checkr.com/oauth/deauthorize
 
 ``` curl
-curl -X POST https://checkr.com/oauth/deauthorize \
+curl -X POST https://api.checkr.com/oauth/deauthorize \
     -u YOUR_ACCESS_TOKEN:
 ```
 
