@@ -2,7 +2,7 @@
 
 ## 1. Authorization
 
-#### GET https://checkr.com/oauth/authorize/:client_id
+#### GET https://api.checkr.com/oauth/authorize/:client_id
 
 | Name| Required?  | Description |
 | ------------- |:-------------:| -----:| -----:|
