@@ -39,7 +39,7 @@ To prevent CSRF attacks, you can use the `state` parameter, passing along a uniq
 
 Here is how this may look (the href value matches that above):
 
-![Connect with Checkr](https://checkr.com/assets/images/connect_with_checkr.png)
+![Connect with Checkr](https://assets.checkr.com/assets/images/connect_with_checkr.png)
 
 
 ### 2.2 Token issuance
@@ -90,10 +90,10 @@ A `token.deauthorized` webhook event is sent when a user disconnects your platfo
 
 #### 2.4.2 From your system
 
-Additionally, if you want to disconnect access to an account, you can POST to `https://checkr.com/oauth/deauthorize`:
+Additionally, if you want to disconnect access to an account, you can POST to `https://api.checkr.com/oauth/deauthorize`:
 
 ```curl
-curl https://checkr.com/oauth/deauthorize \
+curl https://api.checkr.com/oauth/deauthorize \
    -u YOUR_SECRET_KEY:
 ```
 
@@ -119,7 +119,7 @@ end
 get '/' do
   <<-END
     <a href="#{settings.options[:site]}#{settings.options[:authorize_url]}">
-      <img src="https://checkr.com/assets/images/connect_with_checkr.png" width="250" />
+      <img src="https://assets.checkr.com/assets/images/connect_with_checkr.png" width="250" />
     </a>
   END
 end
