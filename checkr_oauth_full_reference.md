@@ -30,7 +30,7 @@
 
 Request:
 ``` curl
-curl -X POST https://checkr.com/oauth/tokens \
+curl -X POST https://api.checkr.com/oauth/tokens \
     -d client_id=XXX \
     -d client_secret=XXX \
     -d code=XXX
