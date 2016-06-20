@@ -1,32 +1,32 @@
-# Checkr oAuth Full Reference
+# Checkr OAuth Full Reference
 
-## 1. Authorization
+### Authorization
 
-#### GET https://checkr.com/oauth/authorize/:client_id
+#### GET https://dashboard.checkr.com/oauth/authorize/:client_id
 
 | Name| Required?  | Description |
-| ------------- |:-------------:| -----:| -----:|
-| redirect_uri | optional | URL to redirect back to |
-| scope | optional (default: 'read_write', possible values: 'read_write') | Permissions to request |
+| ------------- |:-------------:| :-----:|
+| redirect_uri | required- must match what was set on application registration and must use https protocol | URL to redirect back to |
+| scope | optional (default: `read_write`, possible values: `read_write`) | Permissions to request |
 | state | optional | Unique string to be passed back upon completion |
 
 #### GET https://YOUR-REDIRECT-URI.com
 
 | Name | Description |
-| ------------- |:-------------:| -----:| -----:|
+| :------------- |:-------------:| :-----:|
 | code | An authorization code you can use in the next call to get an access token for your user. This can only be used once and expires in 5 minutes.|
 | state | The value of the state parameter you provided on the initial GET request. |
 | error | Error code, if any error. |
 
-## 2. Token Issuance
+### Token Issuance
 
 #### POST https://api.checkr.com/oauth/tokens
 
-| Name| Required?  | Description |
-| ------------- |:-------------:| -----:| -----:|
-| client_id | required | Issued when you created your application|
-| client_secret | required | Issued when you created your application|
-| code | required | The value of the code returned previously |
+| Name| Required? | Type | Description |
+| ------------- |:-------------:| :-----:| :-----:|
+| client_id | required | string | Issued when you created your application|
+| client_secret | required | string |Issued when you created your application|
+| code | required | string | The value of the code returned previously |
 
 Request:
 ``` curl
@@ -45,16 +45,24 @@ Response:
 }
 ```
 
-## 3. Deauthorize
+### Deauthorize
 
 #### POST https://api.checkr.com/oauth/deauthorize
 
+Request:
 ``` curl
 curl -X POST https://api.checkr.com/oauth/deauthorize \
-    -u YOUR_ACCESS_TOKEN:
+    -u END_USER_ACCESS_TOKEN:
 ```
 
-## 4. Deauthorize callback
+Response:
+```json
+{
+  "access_token": "xoxt-23984754863-2348975623103"
+}
+```
+
+### Deauthorize callback
 
 #### POST https://YOUR-DEAUTHORIZATION-CALLBACK.com
 
