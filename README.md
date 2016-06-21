@@ -123,7 +123,7 @@ curl -X POST https://api.checkr.com/v1/webhooks \
 See the [Checkr Webhooks API](https://github.com/checkr/oauth-docs/blob/master/checkr_webhooks_api.md) for a complete guide.
 
 ### 4.2 Packages
-You may want to have a dynamic way of creating and listing a report's package on a per-account basis. To add packages, you will need to manage `Package`s of every end user's authorized account by making requests to our Packages API using the end user's `access_token`. If you are using a test `client_id` and test `client_secret`, we will automatically create test default packages for an end user's account. The default packages are `tasker_standard`, `tasker_pro`, `driver_standard`, and `driver_pro`. See more details about the package types [here](https://docs.checkr.com/#report).
+You may want to have a dynamic way of creating and listing a report's package on a per-account basis. To add packages, you will need to manage `Package`s of every end user's authorized account by making requests to our Packages API using the end user's `access_token`. If you are using a test `client_id` and test `client_secret`, we will automatically create test default packages for an end user's account. The default packages are `tasker_standard`, `tasker_pro`, `driver_standard`, and `driver_pro`. See more details about the package types [here](https://docs.checkr.com/#getting-started) under `Create a Report`.
 
 See the [Checkr Packages API](https://github.com/checkr/oauth-docs/blob/master/checkr_packages_api.md) for a complete guide.
 
