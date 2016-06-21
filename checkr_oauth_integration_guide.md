@@ -29,7 +29,9 @@ To get started with your integration, you’ll first need to know two key pieces
 - Your `redirect_uri`, a page on your website to which the user will be redirected after connecting their account (or failing to, should that be the case), set by you.
 Checkr can also provide a development `client_id`, to make testing easier.
 
-The `client_id` and `client_secret` will be provided upon setting up your Application with clients@checkr.com. You will also set a `redirect_uri` at this time. The `redirect_uri` must follow the HTTPS protocol.
+When you register your application with clients@checkr.com, you will need to provide an application `name`, a `description`, an `url`, and a `redirect_uri`. The host of the `url` must match the host from which your application will authenticate end users. The `redirect_uri` must follow the HTTPS protocol. You may optionally provide a `logo_url` and a `deauthorization_webhook_url`.
+
+The `client_id` and `client_secret` will be provided to you at this time.
 
 ### 2.1 End user authorization
 
@@ -104,7 +106,7 @@ curl https://api.checkr.com/oauth/deauthorize \
 
 In order to create an OAuth integration in test mode, a separate test Application must be created. Please reach out to clients@checkr.com to do so. Using the test `client_id` and test `client_secret` provided by Checkr will return a test `access_token` that will create test resources.
 
-In test mode, a credit card will not be created nor saved when a end user signs up for Checkr and authenticates your application. The credit card will not be validated.
+In test mode, a credit card will not be created nor saved when a end user signs up for Checkr and authenticates your application.
 
 Test SSNs and driver licenses are available for use and are detailed in [the Checkr API documentation](https://docs.checkr.com/#development).
 
@@ -122,6 +124,6 @@ curl -X POST https://api.checkr.com/v1/webhooks \
 See `./checkr_webhooks_api.md` for a full guide.
 
 ### 3.2 Packages
-You may want to have a dynamic way of creating and listing a report's package on a per-account basis. We will automatically create default packages for an end user's account, but you can also add additional packages. To do so, you will need to manage `Package`s of every end user's authorized account by making requests to our Packages API using the end user's `access_token`.
+You may want to have a dynamic way of creating and listing a report's package on a per-account basis. To add packages, you will need to manage `Package`s of every end user's authorized account by making requests to our Packages API using the end user's `access_token`. If you are using a test `client_id` and test `client_secret`, we will automatically create test default packages for an end user's account. The default packages are `tasker_standard`, `tasker_pro`, `driver_standard`, and `driver_pro`. See more details about the package types [here](https://docs.checkr.com/#report).
 
 See `./checkr_packages_api.md` for a full guide.
