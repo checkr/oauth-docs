@@ -6,7 +6,7 @@
 
 | Name| Required?  | Description |
 | ------------- |:-------------:| :-----:|
-| redirect_uri | required- must match what was set on application registration and must use https protocol | URL to redirect back to |
+| redirect_uri | optional- domain must match redirect_uri set during application registration and must use https protocol | URL to redirect back to |
 | scope | optional (default: `read_write`, possible values: `read_write`) | Permissions to request |
 | state | optional | Unique string to be passed back upon completion |
 
