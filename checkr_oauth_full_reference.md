@@ -74,7 +74,7 @@ Response:
   "created_at": "2015-10-05T20:19:52Z",
   "data": {
     "object": {
-      "access_token": "XXXXXXX"
+      "access_code": "XXXXXXX"
     }
   }
 }
