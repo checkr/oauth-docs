@@ -67,12 +67,12 @@ You can also specifically redirect users to the /signin or /signup endpoint spec
 
 **Sign in**
 ```
-https://partners.checkr.com/authorize/:client_id/signin?scope=read_write&ref=dashboard
+https://partners.checkr.com/authorize/:client_id/signin?scope=read_write
 ```
 
 **Sign up**
 ```
-https://partners.checkr.com/authorize/:client_id/signup?scope=read_write&ref=dashboard
+https://partners.checkr.com/authorize/:client_id/signup?scope=read_write
 ```
 
 To prevent CSRF attacks, you can also use the `state` parameter, passing along a unique token as the value. We’ll include the `state` you gave us when we redirect back.
