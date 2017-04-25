@@ -63,7 +63,7 @@ With these pieces of information on hand, you’re ready to have your end users 
 https://dashboard.checkr.com/oauth/authorize/:client_id?scope=read_write
 ```
 
-You can also specifically redirect users to the /signin or /signup endpoint specifically depending on whether you know they have already set up an account with Checkr. The URLs for both options are as follows:
+You can also specifically redirect users to the "/signin" or "/signup" endpoint specifically depending on whether you know they have already set up an account with Checkr. The URLs for both options are as follows:
 
 **Sign in**
 ```
