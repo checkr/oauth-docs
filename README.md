@@ -60,7 +60,7 @@ Test SSNs and driver licenses are available for use and are detailed in [the Che
 With these pieces of information on hand, you’re ready to have your end users connect to Checkr within your platform. We recommend showing a Connect button that sends them to our authorize url endpoint:
 
 ```
-https://dashboard.checkr.com/oauth/authorize/:client_id?scope=read_write
+https://partners.checkr.com/oauth/authorize/:client_id?scope=read_write
 ```
 
 To prevent CSRF attacks, you can also use the `state` parameter, passing along a unique token as the value. We’ll include the `state` you gave us when we redirect back.
