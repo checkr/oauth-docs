@@ -63,6 +63,18 @@ With these pieces of information on hand, you’re ready to have your end users 
 https://partners.checkr.com/oauth/authorize/:client_id?scope=read_write
 ```
 
+You can also specifically redirect users to the "/signin" or "/signup" endpoint specifically depending on whether you know they have already set up an account with Checkr. The URLs for both options are as follows:
+
+**Sign in**
+```
+https://partners.checkr.com/authorize/:client_id/signin?scope=read_write
+```
+
+**Sign up**
+```
+https://partners.checkr.com/authorize/:client_id/signup?scope=read_write
+```
+
 To prevent CSRF attacks, you can also use the `state` parameter, passing along a unique token as the value. We’ll include the `state` you gave us when we redirect back.
 
 Here is how this may look:
