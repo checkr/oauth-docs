@@ -57,13 +57,7 @@ Test SSNs and driver licenses are available for use and are detailed in [the Che
 ## Integration
 ### End user authorization
 
-With these pieces of information on hand, you’re ready to have your end users connect to Checkr within your platform. We recommend showing a Connect button that sends them to our authorize url endpoint:
-
-```
-https://partners.checkr.com/oauth/authorize/:client_id/signin?scope=read_write
-```
-
-You can also specifically redirect users to the "/signin" or "/signup" endpoint specifically depending on whether you know they have already set up an account with Checkr. The URLs for both options are as follows:
+With these pieces of information on hand, you’re ready to have your end users connect to Checkr within your platform. We recommend showing a Connect button that sends them to our authorize url endpoint. You can specifically redirect users to the "/signin" or "/signup" endpoint specifically depending on whether you know they have already set up an account with Checkr. The URLs for both options are as follows:
 
 **Sign in**
 ```
