@@ -18,20 +18,78 @@ This webhook will only go to you, the partner. It will be sent to the endpoint s
 
 ```json
 {
-  "id":"57a10c5d4772615f58010000",
-  "object":"event",
-  "type":"account.credentialed",
-  "created_at":"2016-08-02T21:10:53Z",
-  "data":{
-    "object":{
-      "account":{
-        "id":"credentialed integrated account id"
+  "id": "5ba02cd2079784004bd67ba5",
+  "object": "event",
+  "type": "account.credentialed",
+  "created_at": "2018-09-17T22:38:10Z",
+  "data": {
+    "object": {
+      "id": "credentialed integrated account id",
+      "adjudication_filters_enabled": false,
+      "adverse_action_email": null,
+      "adverse_action_enabled": true,
+      "adverse_action_notice_days": 7,
+      "api_authorized": true,
+      "apply_canada_uris": null,
+      "authorized": true,
+      "better_future_banner": false,
+      "billing_email": "jeff@yourcustomer.com",
+      "canada_enabled": false,
+      "continuous_monitoring": false,
+      "candidates_view_enabled": false,
+      "credit_report_reasons": [],
+      "credit_report_setting": false,
+      "default_compliance_city": "San Diego",
+      "default_compliance_state": "CA",
+      "free_credits": 5,
+      "geos_required": null,
+      "in_house_adjudication": false,
+      "individualized_assessment": false,
+      "invitation_period": 7,
+      "manual_orders_enabled": false,
+      "name": "Your Customer Co.",
+      "notify_assessment_changed": true,
+      "notify_candidate_report_started": false,
+      "pilot_account": false,
+      "programs_enabled": false,
+      "request_aliases_hard_cap_threshold": null,
+      "requires_education_history_enabled": false,
+      "requires_employment_history_enabled": false,
+      "self_serve_packages_enabled": false,
+      "self_service_applications": true,
+      "show_adjudication_filtered_charges": true,
+      "skip_email_on_id_and_dl_exceptions": false,
+      "support_email": null,
+      "support_phone": null,
+      "technical_contact_email": "jill@yourcustomer.com",
+      "compliance_contact_email": null,
+      "uri_name": "yourcustomer",
+      "logo_uri": null,
+      "available_screenings": [
+        "county_civil_search",
+        "county_criminal_search",
+        "..."
+      ],
+      "purpose": "employment",
+      "webhook_setting": {
+        "candidate_created": false,
+        "candidate_driver_license_required": false,
+        "candidate_engaged": false,
+        "candidate_updated": false,
+        "invitation_completed": true,
+        "invitation_created": true,
+        "invitation_expired": true,
+        "report_completed": true,
+        "report_created": true,
+        "report_disputed": true,
+        "report_resumed": true,
+        "report_suspended": true,
+        "report_updated": false,
+        "report_upgraded": true
       }
     }
-  },
-  "account_id":"account id tied to your platform"
+  }
 }
-
 ```
 
 
@@ -58,8 +116,7 @@ This webhook will only go to you, the partner. It will be sent to the endpoint s
     "object":{
       "access_code":"dummy access token"
     }
-  },
-  "account_id":"5d78dfa52ea938723b2f2ba3"
+  }
 }
 ```
 
