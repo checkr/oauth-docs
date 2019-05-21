@@ -13,7 +13,7 @@
 #### GET https://YOUR-REDIRECT-URI.com
 
 | Name | Description |
-| :------------- |:-------------:| :-----:|
+| :------------- |:-------------:| 
 | code | An authorization code you can use in the next call to get an access token for your user. This can only be used once and expires in 5 minutes.|
 | state | The value of the state parameter you provided on the initial GET request. |
 | error | Error code, if any error. |
